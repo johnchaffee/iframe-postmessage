@@ -15,7 +15,7 @@ window.onload = function () {
   function sendMessage(e) {
     console.log("Send e.data: " + JSON.stringify(textBox.value, null, 2));
     // TODO Replace "*" with the domain of the targetWindow (e.g. "https://parent.com")
-    targetWindow.postMessage(textBox.value, "*");
+    targetWindow.postMessage(textBox.value, "https://fir-smiling-sarahsaurus.glitch.me");
   }
 
   // --- RECEIVING MESSAGEES ---
@@ -30,14 +30,14 @@ window.onload = function () {
     console.log("Receive e.isTrusted: " + e.isTrusted);
     console.log("Receive e.data: " + JSON.stringify(e.data, null, 2));
 
-    messageEle.innerHTML += `<p>Received Message from ${e.origin}: ${e.data}</p>`;
+    // messageEle.innerHTML += `<p>Received Message from ${e.origin}: ${e.data}</p>`;
 
     // TODO Uncomment section below and replace line above after entering approved domain
 
-    // if (e.origin !== "http://localhost") {
-    // 	return;
-    // } else {
-    // messageEle.innerHTML += `<p>Received Message from ${e.origin}: ${e.data}</p>`;
-    // }
+    if (e.origin !== "https://fir-smiling-sarahsaurus.glitch.me") {
+    	return;
+    } else {
+    messageEle.innerHTML += `<p>Received Message from ${e.origin}: ${e.data}</p>`;
+    }
   });
 };
