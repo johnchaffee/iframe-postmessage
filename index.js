@@ -14,11 +14,11 @@ window.onload = function () {
   // Post message to targetWindow
   function sendMessage(e) {
     console.log("Send e.data: " + JSON.stringify(textBox.value, null, 2));
-    // TODO Replace "*" with the domain of the targetWindow (e.g. "https://parent.com")
+    // NOTE Replace targetWindow url with "*" when testing on localhost
     targetWindow.postMessage(textBox.value, "https://fir-smiling-sarahsaurus.glitch.me");
   }
 
-  // --- RECEIVING MESSAGEES ---
+  // --- RECEIVING MESSAGES ---
 
   // Get a reference to the <div> on the page that will display the message text.
   const messageEle = document.getElementById("message");
@@ -30,10 +30,7 @@ window.onload = function () {
     console.log("Receive e.isTrusted: " + e.isTrusted);
     console.log("Receive e.data: " + JSON.stringify(e.data, null, 2));
 
-    // messageEle.innerHTML += `<p>Received Message from ${e.origin}: ${e.data}</p>`;
-
-    // TODO Uncomment section below and replace line above after entering approved domain
-
+    // NOTE Replace e.origin url with "http://localhost" when testing on localhost
     if (e.origin !== "https://fir-smiling-sarahsaurus.glitch.me") {
     	return;
     } else {
