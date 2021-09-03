@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>postMessage Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Post Message Demo</h1>
+    <div id="parent">
+      <h2>Parent Window</h2>
+      <div class="inner-padding">
+        <textarea
+          id="body"
+          name="body"
+          rows="3"
+          cols="100%"
+          placeholder="Enter text here"
+        ></textarea>
+        <button id="sendBtn">Send message to child window</button>
+        <div id="message"></div>
+      </div>
+    </div>
+
+    <div id="child">
+      <h2>Child iframe Window</h2>
+      <iframe id="childWindow" src="child.html" width="100%" height="400px">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </div>
+
+    <script>
+      // Get a reference to the child iframe window
+      const targetWindow = document.getElementById("childWindow").contentWindow;
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>

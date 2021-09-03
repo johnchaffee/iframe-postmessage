@@ -1,0 +1,40 @@
+body {
+  /* background: #eee; */
+  padding: 1em;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 0 1em;
+}
+
+iframe {
+  border: none;
+}
+
+textarea {
+  width: 100%;
+}
+
+#parent {
+  float: left;
+  width: 50%;
+}
+
+#child {
+  float: right;
+  width: 50%;
+  background-color: lightyellow;
+}
+
+.inner-padding {
+  padding: 1em;
+}
+
+.yellow {
+  background-color: lightyellow;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Child iframe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <textarea
+      id="body"
+      name="body"
+      rows="3"
+      cols="30"
+      placeholder="Enter text here"
+    ></textarea
+    ><br />
+    <button id="sendBtn">Send message to parent window</button>
+    <div id="message"></div>
+    <script>
+      // Get a reference to the parent window
+      const targetWindow = window.parent;
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
